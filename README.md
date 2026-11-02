@@ -11,8 +11,21 @@ Public website for Night Cheese Labs LLC. Plain HTML and CSS, no build step. Git
 | `404.html` | Not-found page (GitHub Pages serves it automatically) |
 | `style.css` | All styles |
 | `CNAME` | Custom domain for GitHub Pages |
+| `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | Browser and home-screen icons |
+| `og-image.png` | Link preview image (1200×630) |
+| `assets/` | Source SVGs for the logo marks and the link preview |
+| `_tools/build_marks.py` | Regenerates `assets/`, the icons and `og-image.png` (not published) |
 
 The header and footer are copied into each page. Change them in every file.
+
+## Logo
+
+Two marks, both in the site's ink and cheese colours:
+
+- **Cheese moon:** a cheese crescent with holes. It's the header logo and the favicon. Small sizes use fewer, bigger holes: two at 32px, one at 16px.
+- **Seal:** a ring with "NIGHT CHEESE LABS · EST. 2026" around the cheese moon. It's used in the home hero, the footer and the link preview. Don't show it smaller than about 48px, or the ring text stops being readable.
+
+To change them, edit `_tools/build_marks.py` and run `python3 _tools/build_marks.py`. It needs Google Chrome for the PNGs. The pages inline the same SVG markup, so paste any change into the header, hero and footer too.
 
 ## Preview locally
 

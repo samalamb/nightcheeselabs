@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <style>@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap");</style>
+    <rect width="1200" height="630" fill="#0d1322"/>
+    <svg x="120" y="125" width="380" height="380" viewBox="0 0 76 76" role="img" aria-label="Night Cheese Labs, established 2026"><defs><path id="og-ring" d="M38 11a27 27 0 1 1 0 54a27 27 0 1 1 0 -54"/></defs><circle cx="38" cy="38" r="35" fill="none" stroke="#f5c84c" stroke-width="1.5"/><text font-family="'IBM Plex Mono', ui-monospace, Menlo, monospace" font-size="6.8" font-weight="500" fill="#ebe6da" transform="rotate(-95.62 38 38)"><textPath href="#og-ring" textLength="169.35" lengthAdjust="spacing">NIGHT CHEESE LABS · EST. 2026 · </textPath></text><path transform="translate(20.9 17) scale(0.6)" fill="#f5c84c" fill-rule="evenodd" d="M54.17 40.37A25 25 0 1 1 27.4 9.14A21 21 0 0 0 54.17 40.37ZM13 38a4 4 0 1 0 8 0a4 4 0 1 0 -8 0ZM24 50a3 3 0 1 0 6 0a3 3 0 1 0 -6 0ZM9.8 26a2.2 2.2 0 1 0 4.4 0a2.2 2.2 0 1 0 -4.4 0ZM38.2 53a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0Z"/></svg>
+    <g transform="translate(590 0)">
+    <text x="0" y="228" font-family="'IBM Plex Mono', monospace" font-size="22" font-weight="500" letter-spacing="4" fill="#f5c84c">INDEPENDENT SOFTWARE STUDIO</text>
+    <text x="-4" y="328" font-family="Fraunces, Georgia, serif" font-size="92" font-weight="500" letter-spacing="-1.5" fill="#ebe6da">Night Cheese</text>
+    <text x="-4" y="426" font-family="Fraunces, Georgia, serif" font-size="92" font-weight="500" letter-spacing="-1.5" fill="#ebe6da">Labs</text>
+    </g>
+    </svg>
+    
