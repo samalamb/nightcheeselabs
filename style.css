@@ -1,0 +1,510 @@
+/* Night Cheese Labs — late-night editorial */
+
+:root {
+  --ink: #0d1322;
+  --ink-raised: #141c30;
+  --line: #26304a;
+  --text: #ebe6da;
+  --muted: #a3a9b8;
+  --cheese: #f5c84c;
+  --cheese-dim: #c9a43c;
+
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --measure: 38rem;
+  --wide: 64rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: var(--cheese);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cheese);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cheese);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Labels */
+
+.label {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.label--accent {
+  color: var(--cheese);
+}
+
+/* Header */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logo-mark {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+.logo-mark svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.35s ease, transform 0.45s ease;
+}
+
+.logo-mark .cheese {
+  opacity: 0;
+  transform: rotate(25deg) scale(0.6);
+}
+
+.logo:hover .moon,
+.logo:focus-visible .moon {
+  opacity: 0;
+  transform: rotate(-35deg) scale(0.6);
+}
+
+.logo:hover .cheese,
+.logo:focus-visible .cheese {
+  opacity: 1;
+  transform: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  display: inline-block;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--cheese);
+}
+
+/* Type */
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1.1rem;
+}
+
+.lede {
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: var(--measure);
+}
+
+/* Sections */
+
+.hero {
+  padding: clamp(4rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+}
+
+.hero h1 {
+  max-width: 18ch;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--cheese);
+}
+
+.section {
+  padding: 0 0 clamp(4rem, 10vw, 7rem);
+}
+
+.page {
+  padding: clamp(3rem, 9vw, 6rem) 0 clamp(4rem, 10vw, 7rem);
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose h2:first-of-type {
+  margin-top: 2.5rem;
+}
+
+.prose ul {
+  padding-left: 1.2rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose li::marker {
+  color: var(--cheese);
+}
+
+.updated {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Product cards */
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--ink-raised);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 1.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.card > p {
+  color: var(--muted);
+}
+
+.card--empty {
+  background: transparent;
+  border-style: dashed;
+  justify-content: center;
+  min-height: 16rem;
+}
+
+.card--empty p:not(.label) {
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.plans {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.plans li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.plan-name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+}
+
+.plan-name small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.plan-price {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--cheese);
+  white-space: nowrap;
+}
+
+.fine {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.card .button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.button {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--cheese);
+  padding: 0.75rem 1.1rem;
+  border-radius: 2px;
+}
+
+.button:hover {
+  background: var(--text);
+  text-decoration: none;
+}
+
+/* Contact */
+
+.contact-email {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  margin: 0 0 2rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.75rem 1.5rem;
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 0.2rem;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+@media (max-width: 30rem) {
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .facts dd {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* 404 */
+
+.lost {
+  padding: clamp(5rem, 16vw, 10rem) 0;
+}
+
+.lost h1 {
+  font-size: clamp(5rem, 22vw, 11rem);
+  font-style: italic;
+  line-height: 1;
+  color: var(--cheese);
+  margin-bottom: 1.5rem;
+}
+
+.lost p:not(.label) {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  color: var(--muted);
+}
+
+/* Footer */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 0 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+.site-footer a:hover {
+  color: var(--cheese);
+}
+
+.site-footer .night {
+  flex-basis: 100%;
+  font-style: italic;
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark svg {
+    transition: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
